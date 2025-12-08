@@ -1,14 +1,15 @@
 #include "binary_trees.h"
 #include <stdlib.h>
 /**
- * binary_tree_t - create a binary tree
- *
+ * binary_tree_insert_right - create a binary tree
+ * @parent: p
+ * @value: value
  * Return: a pointer to the new binary tree
  */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *new_child;
-	
+
 	new_child = malloc(sizeof(binary_tree_t));
 	if (new_child == NULL || parent == NULL)
 		return (NULL);
