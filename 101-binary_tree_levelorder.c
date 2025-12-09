@@ -19,25 +19,27 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	return (1 + right);
 }
 /**
- * binary_tree_preorder - create a binary tree
+ * binary_tree_print_level - create a binary tree
  * @tree: p
+ * @level: d
  * @func: value
  * Return: void
  */
-void binary_tree_print_level(const binary_tree_t *tree, size_t level, void (*func)(int))
+void binary_tree_print_level(const binary_tree_t *tree,
+	 size_t level, void (*func)(int))
 {
 	if (tree == NULL)
 		return;
 	if (level == 0)
 		func(tree->n);
-	else if (0 < level)
+	else if (level > 0)
 	{
 		binary_tree_print_level(tree->left, level - 1, func);
 		binary_tree_print_level(tree->right, level - 1, func);
 	}
 }
 /**
- * binary_tree_preorder - create a binary tree
+ * binary_tree_levelorder - create a binary tree
  * @tree: p
  * @func: value
  * Return: void

@@ -12,12 +12,13 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 	return (1 + binary_tree_depth(tree->parent));
 }
 /**
- * binary_tree_insert_right - create a binary tree
- * @parent: p
- * @value: value
+ * binary_trees_ancestor - create a binary tree
+ * @first: p
+ * @second: value
  * Return: a pointer to the new binary tree
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+	 const binary_tree_t *second)
 {
 	int depth_f;
 	int depth_s;
@@ -25,7 +26,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	if (first == NULL || second == NULL)
 		return (NULL);
 	if (first == second)
-		return ((binary_tree_t*)first);
+		return ((binary_tree_t *)first);
 	depth_f = binary_tree_depth(first);
 	depth_s = binary_tree_depth(second);
 	if (depth_f > depth_s)
